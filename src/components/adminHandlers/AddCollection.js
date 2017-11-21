@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import{Form, Button} from 'react-bootstrap'
 import axios from 'axios'
+import AddInput from './AddInput'
 
 class AddCollection extends Component {
   constructor(props){
@@ -8,44 +9,26 @@ class AddCollection extends Component {
     this.state = {
     name: '',
     detail: '',
-    img:[{}],
+    img:[],
     gallery:''
   }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.addUrl = this.addUrl.bind(this);
-    this.addUrl2 = this.addUrl2.bind(this);
+    this.addImages = this.addImages.bind(this);
   }
 
   handleChange(event) {
-    this.setState({[event.target.name]: event.target.value});
+    this.setState({[event.target.name]: event.target.value})
   }
 
-  addUrl(event){
-    let urlValue = event.target.value
-    let newaImage=this.state.img.map((image,i)=> {
-    image.name = this.state.imgName
-    image.url= urlValue
-      return image
-    })
-    event.preventDefault()
+  addImages(imgState){
+    console.log(imgState)
+    this.setState({img:this.state.img.concat([imgState])})
   }
-  
-
-  addUrl2(event){
-    let colImage = this.state.img
-    let object ={}
-    object.name= this.state.imgName2
-    object.url= this.state.urlValue2
-    colImage.push(object)
-    event.preventDefault()
-    this.setState({img:colImage})
-  }
-
 
   handleSubmit(event) {
-    alert('your message has been sent');
-    event.preventDefault();
+    alert('your message has been sent')
+    event.preventDefault()
     axios.post('http://localhost:3001/new', {
      name: this.state.name,
      detail:this.state.detail,
@@ -61,7 +44,7 @@ class AddCollection extends Component {
   }
 	
 	render() {
-		console.log(this.state)
+		console.log(this.state, 'padre')
 	return(
 	  <div>
 			<h4><strong>Add new collection:</strong></h4>
@@ -79,39 +62,24 @@ class AddCollection extends Component {
         	placeholder="Add title..."
           value={this.state.detail}
         	onChange={this.handleChange} />
-          <p><strong>New Image:</strong></p>
-          <p>name cover *: </p>
-          <input  
-          name='imgName' 
-          placeholder="Add name..."
-          onChange={this.handleChange} />
-          <input  
-          name='url'
-          placeholder="Add url..."
-          onChange={this.addUrl} />
-          
-          <p>name cover *: </p>
-          <input  
-          name='imgName2' 
-          placeholder="Add name..."
-          onChange={this.handleChange} />
-          <input  
-          name='urlValue2'
-          placeholder="Add url..."
-          onChange={this.handleChange}/>
-          <Button type="submit" onClick={this.addUrl2}> + Add image</Button>
+        
 
-          <p>Select the gallery:</p>
+          <p>Select gallery:</p>
           <select value={this.state.gallery} name='gallery' onChange={this.handleChange}>
             <option value="">Select one</option>
             <option value="fashion" name='gallery'>fashion</option>
             <option value="commercial" name='gallery'>commercial</option>
           </select>
-        	<Button type="submit" onClick={this.handleSubmit}>Add</Button>
+          <AddInput addImages={this.addImages}/>
+          <div> 
+            <Button type="submit" onClick={this.handleSubmit}>Add Collection</Button>
+          </div>
       </Form>
-		</div>
-		)
-	}
+    </div>
+    )
+  }
 }
 
 export default AddCollection
+
+       

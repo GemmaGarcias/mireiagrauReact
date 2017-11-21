@@ -26,6 +26,7 @@ class GallerySessions extends Component {
     const coverSession = fashionCollections.map((session, i) => session.img[0].url) 
     console.log(coverSession[0])
     const sessionName = this.props.match.params.session
+    
     return(
       <div> 
         <div className='headerportfolio'>
@@ -41,7 +42,7 @@ class GallerySessions extends Component {
                 {fashionCollections.map((session,i)=>(
                   <Link rel="stylesheet" to={`/gallery/${sessionName}/portfolio/${session._id}`}>
                   <Col sm={2} md={4}>
-                    <Thumbnail 
+                    <Thumbnail
                       src={coverSession[i]}
                       key={i}>
                       <h4>{session.name}</h4>
@@ -57,6 +58,6 @@ class GallerySessions extends Component {
       </div>
     )
   }
-} 
+}
 
 export default GallerySessions

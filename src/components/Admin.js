@@ -1,12 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-//import MainAdmin from './MainAdmin'
+
+import { Switch, Route } from 'react-router-dom'
+
 
 import EditHome from './adminHandlers/EditHome'
 import AddCollection from './adminHandlers/AddCollection'
 import ViewImages from './adminHandlers/ViewImages'
+import MainAdmin from './MainAdmin'
 
-const Admin = () => {
+const Admin = (props) => {
 	return(
 		<div className="container">
 		<div>
@@ -51,12 +54,12 @@ const Admin = () => {
 	                            <table className="table">
 	                                <tr>
 	                                    <td>
-	                                        <a href="">View Collections</a> 
+	                                        <Link to='/admin/allcollections'>View Collections</Link> 
 	                                    </td>
 	                                </tr>
 	                                <tr>
 	                                    <td>
-	                                        <a href="">Add Collection</a>
+	                                        <Link to='/admin/newcollection'>Add Collection</Link>
 	                                    </td>
 	                                </tr>
 	                                <tr>
@@ -78,6 +81,7 @@ const Admin = () => {
 	                    <div id="collapseThree" className="panel-collapse collapse">
 	                        <div className="panel-body">
 	                            <table className="table">
+	                            <tbody>
 	                                <tr>
 	                                    <td>
 	                                        <a href="">Change Password</a>
@@ -94,6 +98,7 @@ const Admin = () => {
 	                                            Delete Account</a>
 	                                    </td>
 	                                </tr>
+	                                </tbody>
 	                            </table>
 	                        </div>
 	                    </div>
@@ -122,9 +127,9 @@ const Admin = () => {
 	        <div className="col-sm-9 col-md-9">
 	            <div className="well">
 	                <h1>Settings</h1>
-	 								<EditHome/>
-	 								<AddCollection/>
-									<ViewImages/>
+	 					<div className="col-sm-9 col-md-12">
+							<MainAdmin {...props}/>
+						</div>
 	            </div>
 	        </div>
 	    </div>
