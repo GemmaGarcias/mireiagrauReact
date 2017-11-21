@@ -1,13 +1,13 @@
 import axios from 'axios'
 
 export const getGallery = () => {
-	const url = 'http://localhost:3001/gallery'
+	const url = 'https://webfotograph-project.herokuapp.com/gallery'
 	return axios.get(url)
 		.then( response => response.data )
 }
 
 export const getSessionById = (id) => {
-	const url = `http://localhost:3001/gallery/${id}`
+	const url = `https://webfotograph-project.herokuapp.com/gallery/${id}`
 	return axios.get(url)
 		.then( response => response.data )
 }
