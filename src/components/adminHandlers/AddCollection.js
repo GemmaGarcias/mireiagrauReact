@@ -29,7 +29,7 @@ class AddCollection extends Component {
   handleSubmit(event) {
     alert('your message has been sent')
     event.preventDefault()
-    axios.post('http://webfotograph-project.herokuapp.com/new', {
+    axios.post('https://webfotograph-project.herokuapp.com/new', {
      name: this.state.name,
      detail:this.state.detail,
      img: this.state.img,
