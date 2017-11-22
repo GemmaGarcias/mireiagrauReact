@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Form, Button} from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
 
 class AddInput extends Component {
     constructor(props) {
@@ -27,13 +27,6 @@ class AddInput extends Component {
       this.setState({[event.target.name]: event.target.value})
     }
 
-    // handleSubmit(event){
-    //   const newstate=this.state
-    //   delete newstate.inputs
-    //   console.log(newstate, 'newstate')
-    //   event.preventDefault()
-    //   this.props.addImages(newstate)
-    // }
 
     render() {
     	console.log(this.state, 'hijo')
@@ -53,7 +46,7 @@ class AddInput extends Component {
                           onChange={this.handleChange} 
                           placeHolder='add url...'/>
                           <button type='submit' onClick={this.appendInput} >
-                            CLICK ME TO ADD AN INPUT
+                            + ADD IMAGE
                           </button>
                         </form>)
                        }

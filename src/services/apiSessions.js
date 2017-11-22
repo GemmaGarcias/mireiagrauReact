@@ -12,4 +12,10 @@ export const getSessionById = (id) => {
 		.then( response => response.data )
 }
 
+export const removeSessionById = (id) => {
+	const url = `https://webfotograph-project.herokuapp.com/session/${id}`
+	return axios.delete(url)
+		
+}
+
 //https://webfotograph-project.herokuapp.com

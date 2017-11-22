@@ -20,11 +20,11 @@
           // onChange={this.handleChange}/>
           // <Button type="submit" onClick={this.addUrl2}> + Add image</Button>
 
-     renderInputs() {
+    //  renderInputs() {
        
-    return this.state.inputs.map((input, index) => 
-     <div key={index}>   
-               <input type="text" placeholder="Name image."/>
-               <input type="text" placeholder="Url image."/>
-          </div>)
-     }
+    // return this.state.inputs.map((input, index) => 
+    //  <div key={index}>   
+    //            <input type="text" placeholder="Name image."/>
+    //            <input type="text" placeholder="Url image."/>
+    //       </div>)
+    //  }

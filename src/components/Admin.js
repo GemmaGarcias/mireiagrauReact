@@ -1,12 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import { Switch, Route } from 'react-router-dom'
-
-
-import EditHome from './adminHandlers/EditHome'
-import AddCollection from './adminHandlers/AddCollection'
-import ViewImages from './adminHandlers/ViewImages'
 import MainAdmin from './MainAdmin'
 
 const Admin = (props) => {
@@ -28,16 +22,18 @@ const Admin = (props) => {
 	                    <div id="collapseOne" className="panel-collapse collapse in">
 	                        <div className="panel-body">
 	                            <table className="table">
-	                                <tr>
-	                                    <td>
-	                                        <a><span className="glyphicon glyphicon-picture text-primary"></span>Back Image</a>
-	                                    </td>
-	                                </tr>
-	                                <tr>
-	                                    <td>
-	                                        <Link to='/admin/edithome'><span className="glyphicon glyphicon-pencil text-primary"></span>Main Title</Link>
-	                                    </td>
-	                                </tr>
+	                            	<tbody>
+		                                <tr>
+		                                    <td>
+		                                        <a><span className="glyphicon glyphicon-picture text-primary"></span>Back Image</a>
+		                                    </td>
+		                                </tr>
+		                                <tr>
+		                                    <td>
+		                                        <Link to='/admin/edithome'><span className="glyphicon glyphicon-pencil text-primary"></span>Main Title</Link>
+		                                    </td>
+		                                </tr>
+	                                </tbody>
 	                            </table>
 	                        </div>
 	                    </div>
@@ -52,21 +48,24 @@ const Admin = (props) => {
 	                    <div id="collapseTwo" className="panel-collapse collapse">
 	                        <div className="panel-body">
 	                            <table className="table">
-	                                <tr>
-	                                    <td>
-	                                        <Link to='/admin/allcollections'>View Collections</Link> 
-	                                    </td>
-	                                </tr>
-	                                <tr>
-	                                    <td>
-	                                        <Link to='/admin/newcollection'>Add Collection</Link>
-	                                    </td>
-	                                </tr>
-	                                <tr>
-	                                    <td>
-	                                        <a href="">Delete Images</a>
-	                                    </td>
-	                                </tr>
+		                            <tbody>
+		                                <tr>
+		                                    <td>
+		                                        <Link to='/admin/allcollections'>All collections</Link> 
+		                                    </td>
+		                                </tr>
+		                                <tr>
+		                                    <td>
+		                                        <Link to='/admin/newcollection'>Add new collection</Link>
+		                                    </td>
+		                                </tr>
+		                                <tr>
+		                                    <td>
+		                                        <span className="glyphicon glyphicon-trash text-danger"></span><Link to='/admin/removecollection' className="text-danger">
+		                                            Delete collection</Link>
+		                                    </td>
+		                                </tr>
+	                                </tbody>
 	                            </table>
 	                        </div>
 	                    </div>

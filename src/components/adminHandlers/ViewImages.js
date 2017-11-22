@@ -1,6 +1,6 @@
 import { getGallery } from '../../services/apiSessions'
 import React, { Component } from 'react'
-import { Grid, Row, Col, Thumbnail } from 'react-bootstrap'
+import { Grid, Row} from 'react-bootstrap'
 import{Form} from 'react-bootstrap'
 import GalleryImages from './GalleryImages'
 

@@ -61,9 +61,8 @@ class AddCollection extends Component {
         	name='detail' 
         	placeholder="Add title..."
           value={this.state.detail}
-        	onChange={this.handleChange} />
-        
-
+        	onChange={this.handleChange} 
+          />
           <p>Select gallery:</p>
           <select value={this.state.gallery} name='gallery' onChange={this.handleChange}>
             <option value="">Select one</option>
