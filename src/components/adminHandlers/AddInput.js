@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import {Form} from 'react-bootstrap'
+import {Form, Button} from 'react-bootstrap'
+import './AddCollection.css'
 
 class AddInput extends Component {
     constructor(props) {
@@ -33,21 +34,26 @@ class AddInput extends Component {
         return(
             <div>
                <Form>
-                   <div id="dynamicInput">
+                   <div id="dynamicInput" className='inputDin'>
                        {this.state.inputs.map((input,index) => 
                        	<form>
-                       		<p>Image {index + 1}</p>
-	                       	<input key={input} 
+                       		<p><strong>Image {index + 1}</strong></p>
+	                       	<input 
+                          className='inputDin'
+                          key={input} 
                           name='name' 
                           onChange={this.handleChange} 
                           placeHolder = 'add name...'/>	
-	                       	<input key={input+1} 
+	                       	<input
+                          className='inputDin' 
+                          key={input+1} 
                           name='url' 
                           onChange={this.handleChange} 
                           placeHolder='add url...'/>
-                          <button type='submit' onClick={this.appendInput} >
-                            + ADD IMAGE
-                          </button>
+                          <Button type='submit' bsStyle="primary" 
+                          onClick={this.appendInput} >
+                            + 
+                          </Button>
                         </form>)
                        }
                    </div>

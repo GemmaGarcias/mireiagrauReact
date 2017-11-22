@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import {ListGroup, ListGroupItem, Panel} from 'react-bootstrap'
+import {ListGroup, ListGroupItem, Panel, Media} from 'react-bootstrap'
+import './PanelDelete.css'
 
 class PanelDelete extends Component{
 	constructor(props){
@@ -19,15 +20,21 @@ class PanelDelete extends Component{
 		console.log(this.state.id)
 		return(
 			<div>
-				<Panel collapsible defaultExpanded header={this.props.title}>
+				<Panel className='pnl' collapsible defaultCompleted header={this.props.title}>
 					Created At: {this.props.createdAt}
-					<button value={this.props.id} onClick={this.handleClick} >x</button>
+					<button value={this.props.id} onClick={this.handleClick}>x</button>
 				  <ListGroup fill>
 						{this.props.images.map((img, i) =>(
-				      <ListGroupItem>
-								<img className='galleryImg' src={img.url} alt=""/>
-								<p key={img.name}>{img.name}</p>
-							</ListGroupItem>)
+					      <ListGroupItem>
+						      <Media>
+							      <Media.Left align="top">
+							        <img width={64} height={90} src={img.url} alt="placeholder thumbnail"/>
+							      </Media.Left>
+							      <Media.Body>
+							        <Media.Heading>{img.name}</Media.Heading>					        
+							      </Media.Body>
+							  </Media>
+						  </ListGroupItem>)
 						)}
 					</ListGroup>
 				</Panel>

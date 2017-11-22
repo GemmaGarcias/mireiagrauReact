@@ -1,6 +1,6 @@
 import React from 'react'
 import {Col, Grid, Row} from 'react-bootstrap'
-import './ViewImages.css'
+import './GalleryImages.css'
 
 const GalleryImages = (props) => {
 	return(

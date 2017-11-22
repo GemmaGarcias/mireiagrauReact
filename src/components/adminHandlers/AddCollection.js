@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import{Form, Button} from 'react-bootstrap'
 import axios from 'axios'
 import AddInput from './AddInput'
+import './AddCollection.css'
 
 class AddCollection extends Component {
   constructor(props){
@@ -27,9 +28,8 @@ class AddCollection extends Component {
   }
 
   handleSubmit(event) {
-    alert('your message has been sent')
     event.preventDefault()
-    axios.post('https://webfotograph-project.herokuapp.com/new', {
+    axios.post('http://localhost:3001/new', {
      name: this.state.name,
      detail:this.state.detail,
      img: this.state.img,
@@ -47,31 +47,37 @@ class AddCollection extends Component {
 		console.log(this.state, 'padre')
 	return(
 	  <div>
-			<h4><strong>Add new collection:</strong></h4>
-			<Form >
-					<p> Name:</p>
-        	<input  
+			<h2>Add a new collection:</h2>
+			<Form className='formAdd'>
+					<p className='pform'><strong>Collection name:</strong></p>
+        	<input 
+          className='inputAdd' 
         	name='name' 
-        	placeholder="Add title..."
+        	placeholder="Add name..."
           value={this.state.name}
         	onChange={this.handleChange}
         	autoFocus/>
-        	<p>Detail:</p>
+        	<p className='pform'><strong>Additional information:</strong></p>
         	<input  
+          className='inputAdd'
         	name='detail' 
-        	placeholder="Add title..."
+        	placeholder="Add detail info..."
           value={this.state.detail}
         	onChange={this.handleChange} 
           />
-          <p>Select gallery:</p>
-          <select value={this.state.gallery} name='gallery' onChange={this.handleChange}>
+          <p className='pform'><strong>Select gallery:</strong></p>
+          <select className='inputAdd' value={this.state.gallery} name='gallery' onChange={this.handleChange}>
             <option value="">Select one</option>
             <option value="fashion" name='gallery'>fashion</option>
             <option value="commercial" name='gallery'>commercial</option>
           </select>
+          <p className='pform'><strong>Import your images</strong></p>
           <AddInput addImages={this.addImages}/>
-          <div> 
-            <Button type="submit" onClick={this.handleSubmit}>Add Collection</Button>
+          <div className='end'> 
+            <Button className='btnEnd' 
+            bsStyle="success" 
+            type="submit" 
+            onClick={this.handleSubmit}>Add Collection</Button>
           </div>
       </Form>
     </div>

@@ -46,15 +46,15 @@ class ViewImages extends Component {
     
     return (
       <div className="ViewImages">
-        <h4>Collection Views</h4>
+        <h2>View collections</h2>
         <Form onSubmit={this.handleSubmit}>
-        <select value={this.state.gallery} name='gallery' onChange={this.handleChange}>
+        <select className='selectGallery' value={this.state.gallery} name='gallery' onChange={this.handleChange}>
             <option value="">Select one</option>
             <option value="fashion" name='gallery'>fashion</option>
             <option value="commercial" name='gallery'>commercial</option>
           </select>
         </Form>
-        <h5>{this.state.gallery}</h5>
+        <h3>{this.state.gallery.toUpperCase()} GALLERY:</h3>
         <Grid>
           <Row>
          	<ul>

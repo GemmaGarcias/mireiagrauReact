@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { getGallery, removeSessionById } from '../../services/apiSessions'
 import PanelDelete from './PanelDelete'
+import {Button} from 'react-bootstrap'
+import './DeleteCollection.css'
 
 class DeleteCollection extends Component{
 	constructor(props){
@@ -17,19 +19,33 @@ class DeleteCollection extends Component{
     getGallery()
       .then(data => {
         this.setState({
-          sessionsView: data
-        })
-     })
+        sessionsView: data})
+    })
+  }
+
+  componentWillUpdate(){
+    getGallery()
+    .then(data => {
+      this.setState({
+      sessionsView: data})
+    })
+    console.log('hoa2')
   }
 
   handleChange(event) {
     this.setState({[event.target.name]: event.target.value});
   }
 
+
   deleteSession(id) {
     removeSessionById(id)
-      .then()
-
+      .then(
+        getGallery()
+          .then(data => {
+          this.setState({
+          sessionsView: data
+        })
+     }))
   }
 
   render() {
@@ -47,19 +63,23 @@ class DeleteCollection extends Component{
       id: session._id,
       images: session.img
     }))
-  console.log(fashionCollections)
+  console.log(this.state)
 
 	return(
 		<div className='DeleteCollection'>
+      <h2>Remove collection</h2>
 			<div className='container'>
-				<button value={selectComercial||selectFashion} 
+				<Button className='buttonChange' bsStyle="warning" 
+        value={selectComercial||selectFashion} 
 				name='gallery' 
 				onClick={this.handleChange}>
-        Change to {selectComercial||selectFashion}
-        </button>
+        GO TO {selectComercial||selectFashion} 
+        <span className="glyphicon glyphicon-menu-right"></span>
+        </Button>
 			</div>
       {imageSession.map((gallery,i)=>(
         <PanelDelete 
+        key={i}
         title= {gallery.name} 
         images={gallery.images} 
         createdAt={gallery.date}

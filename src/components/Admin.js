@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 import MainAdmin from './MainAdmin'
+import './Admin.css'
 
 const Admin = (props) => {
 	return(
@@ -10,7 +11,7 @@ const Admin = (props) => {
 			<h1>Admin site</h1>
 		</div>
 	    <div className="row">
-	        <div className="col-sm-3 col-md-3">
+	        <div className="col-sm-3 col-md-3 menuLeft">
 	            <div className="panel-group" id="accordion">
 	                <div className="panel panel-default">
 	                    <div className="panel-heading">
@@ -124,11 +125,10 @@ const Admin = (props) => {
 	            </div>
 	        </div>
 	        <div className="col-sm-9 col-md-9">
-	            <div className="well">
-	                <h1>Settings</h1>
-	 					<div className="col-sm-9 col-md-12">
-							<MainAdmin {...props}/>
-						</div>
+	            <div>
+	 				<div className="col-sm-9 col-md-12">
+						<MainAdmin {...props}/>
+					</div>
 	            </div>
 	        </div>
 	    </div>

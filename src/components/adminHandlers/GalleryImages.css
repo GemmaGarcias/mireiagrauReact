@@ -1,0 +1,13 @@
+.galleryImg{
+	width: 100px;
+	height: auto;
+}
+
+.selectGallery{
+	float:right;
+}
+
+h2{
+	background-color: black;
+	color: white;
+}
