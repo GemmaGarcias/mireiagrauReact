@@ -29,7 +29,7 @@ class AddCollection extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    axios.post('http://localhost:3001/new', {
+    axios.post('https://webfotograph-project.herokuapp.com/new', {
      name: this.state.name,
      detail:this.state.detail,
      img: this.state.img,
