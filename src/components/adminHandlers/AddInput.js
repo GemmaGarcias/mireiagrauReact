@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Form, Button} from 'react-bootstrap'
 import './AddCollection.css'
+import ShowInfoCollection from './ShowInfoCollection'
 
 class AddInput extends Component {
     constructor(props) {
@@ -30,10 +31,10 @@ class AddInput extends Component {
 
 
     render() {
-    	console.log(this.state, 'hijo')
         return(
             <div>
-               <Form>
+              <ShowInfoCollection info={this.props.createdCollection}/>
+               <form>
                    <div id="dynamicInput" className='inputDin'>
                        {this.state.inputs.map((input,index) => 
                        	<form>
@@ -50,14 +51,14 @@ class AddInput extends Component {
                           name='url' 
                           onChange={this.handleChange} 
                           placeHolder='add url...'/>
-                          <Button type='submit' bsStyle="primary" 
-                          onClick={this.appendInput} >
-                            + 
-                          </Button>
                         </form>)
                        }
+                        <Button type='submit' bsSize='small' bsStyle="primary" 
+                          onClick={this.appendInput} >
+                            + 
+                        </Button>
                    </div>
-               </Form>
+               </form>
             </div>
         );
     }

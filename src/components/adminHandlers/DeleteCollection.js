@@ -67,7 +67,7 @@ class DeleteCollection extends Component{
 
 	return(
 		<div className='DeleteCollection'>
-      <h2>Remove collection</h2>
+      <h2 className='titleDelete'>Remove collection</h2>
 			<div className='container'>
 				<Button className='buttonChange' bsStyle="warning" 
         value={selectComercial||selectFashion} 
@@ -76,6 +76,7 @@ class DeleteCollection extends Component{
         GO TO {selectComercial||selectFashion} 
         <span className="glyphicon glyphicon-menu-right"></span>
         </Button>
+        <h3>{this.state.gallery.toUpperCase()} GALLERY:</h3>
 			</div>
       {imageSession.map((gallery,i)=>(
         <PanelDelete 

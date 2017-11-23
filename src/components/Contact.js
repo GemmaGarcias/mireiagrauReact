@@ -10,7 +10,7 @@ const Contact = ()=> {
 					<Col md={5} className='textcontact'>
 						<h4>MIREIA GRAU</h4>
 						<p>Fashion Photographer from Barcelona</p>
-						<a href='https://accounts.google.com/' target='blank'>contact@mireiagrau.com</a>
+						<a href='mailto:contact@mireiagrau.com' target='blank'>contact@mireiagrau.com</a>
 						<p>t.(+34)633.223.173</p>
 						<section>
 							<div className="socials flex-center">

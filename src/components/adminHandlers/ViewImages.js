@@ -46,7 +46,7 @@ class ViewImages extends Component {
     
     return (
       <div className="ViewImages">
-        <h2>View collections</h2>
+        <h2 className='titleView'>View collections</h2>
         <Form onSubmit={this.handleSubmit}>
         <select className='selectGallery' value={this.state.gallery} name='gallery' onChange={this.handleChange}>
             <option value="">Select one</option>

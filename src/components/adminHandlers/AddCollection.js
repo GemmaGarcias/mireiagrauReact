@@ -11,7 +11,8 @@ class AddCollection extends Component {
     name: '',
     detail: '',
     img:[],
-    gallery:''
+    gallery:'',
+    inputImage:false
   }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,17 +30,14 @@ class AddCollection extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    axios.post('https://webfotograph-project.herokuapp.com/new', {
+    axios.post(`https://webfotograph-project.herokuapp.com/new`, {
      name: this.state.name,
      detail:this.state.detail,
      img: this.state.img,
      gallery: this.state.gallery
    })
     this.setState({
-    name: '',
-    detail: '',
-    img:[{}],
-    gallery:''
+    inputImage: true
     })
   }
 	
@@ -47,39 +45,49 @@ class AddCollection extends Component {
 		console.log(this.state, 'padre')
 	return(
 	  <div>
-			<h2>Add a new collection:</h2>
-			<Form className='formAdd'>
-					<p className='pform'><strong>Collection name:</strong></p>
-        	<input 
-          className='inputAdd' 
-        	name='name' 
-        	placeholder="Add name..."
-          value={this.state.name}
-        	onChange={this.handleChange}
-        	autoFocus/>
-        	<p className='pform'><strong>Additional information:</strong></p>
-        	<input  
-          className='inputAdd'
-        	name='detail' 
-        	placeholder="Add detail info..."
-          value={this.state.detail}
-        	onChange={this.handleChange} 
-          />
-          <p className='pform'><strong>Select gallery:</strong></p>
-          <select className='inputAdd' value={this.state.gallery} name='gallery' onChange={this.handleChange}>
-            <option value="">Select one</option>
-            <option value="fashion" name='gallery'>fashion</option>
-            <option value="commercial" name='gallery'>commercial</option>
-          </select>
-          <p className='pform'><strong>Import your images</strong></p>
-          <AddInput addImages={this.addImages}/>
-          <div className='end'> 
-            <Button className='btnEnd' 
-            bsStyle="success" 
-            type="submit" 
-            onClick={this.handleSubmit}>Add Collection</Button>
-          </div>
-      </Form>
+			<h2 className='titleAdd'>Add a new collection:</h2>
+        <div className='formAdd'>
+        { this.state.inputImage
+      		? <div></div>
+          : <Form>
+      					<p className='pform'><strong>Collection name:</strong></p>
+              	<input 
+                className='inputAdd' 
+              	name='name' 
+              	placeholder="Add name..."
+                value={this.state.name}
+              	onChange={this.handleChange}
+              	autoFocus/>
+              	<p className='pform'><strong>Additional information:</strong></p>
+              	<input  
+                className='inputAdd'
+              	name='detail' 
+              	placeholder="Add detail info..."
+                value={this.state.detail}
+              	onChange={this.handleChange} 
+                />
+                <p className='pform'><strong>Select gallery:</strong></p>
+                <select className='inputAdd' value={this.state.gallery} name='gallery' onChange={this.handleChange}>
+                  <option value="">Select one</option>
+                  <option value="fashion" name='gallery'>fashion</option>
+                  <option value="commercial" name='gallery'>commercial</option>
+                </select>
+                <div className='end'> 
+                  <Button className='btnEnd' 
+                  bsStyle="success" 
+                  type="submit" 
+                  onClick={this.handleSubmit}>Create Collection</Button>
+                </div>
+            </Form>
+          }
+          {
+            this.state.inputImage
+            ? <div>
+                <AddInput addImages={this.addImages} createdCollection={this.state}/>
+              </div>
+            : <div className='hide'></div>
+          }
+        </div>
     </div>
     )
   }

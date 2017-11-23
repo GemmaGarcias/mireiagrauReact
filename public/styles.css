@@ -173,6 +173,7 @@ h2.titleAbout{
 
 /*FOOTER ---------*/
 .footer{
+  margin-top: 30px;
 	text-align: center;
   border-top: solid 1px #343434;
   padding:10px;

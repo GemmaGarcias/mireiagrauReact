@@ -1,7 +1,9 @@
 import axios from 'axios'
+const {REACT_APP_API_SERVER} = process.env
 
 export const getGallery = () => {
-	const url = 'https://webfotograph-project.herokuapp.com/gallery'
+	console.log(REACT_APP_API_SERVER)
+	const url = `https://webfotograph-project.herokuapp.com/gallery`
 	return axios.get(url)
 		.then( response => response.data )
 }
