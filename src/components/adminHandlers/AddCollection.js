@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import{Form, Button} from 'react-bootstrap'
 import axios from 'axios'
 import AddInput from './AddInput'
+import {Redirect} from 'react-router-dom'
 import './AddCollection.css'
 
 class AddCollection extends Component {
@@ -10,9 +11,10 @@ class AddCollection extends Component {
     this.state = {
     name: '',
     detail: '',
-    img:[],
     gallery:'',
-    inputImage:false
+    inputImage:false,
+    id:'',
+    redirect:false
   }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,19 +32,22 @@ class AddCollection extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    axios.post(`https://webfotograph-project.herokuapp.com/new`, {
+    axios.post(`http://localhost:3001/new`, {
      name: this.state.name,
      detail:this.state.detail,
-     img: this.state.img,
      gallery: this.state.gallery
    })
-    this.setState({
-    inputImage: true
+    .then(response=>{
+        this.setState({
+        id: response.data.result._id,
+        inputImage: true,
+        redirect: true
+      })
     })
   }
 	
 	render() {
-		console.log(this.state, 'padre')
+		const {redirect, id}= this.state
 	return(
 	  <div>
 			<h2 className='titleAdd'>Add a new collection:</h2>
@@ -83,10 +88,11 @@ class AddCollection extends Component {
           {
             this.state.inputImage
             ? <div>
-                <AddInput addImages={this.addImages} createdCollection={this.state}/>
+                <AddInput {...this.props} addImages={this.addImages} createdCollection={this.state}/>
               </div>
             : <div className='hide'></div>
           }
+          { redirect && <Redirect to={`/admin/newcollection/${id}/images`} />}
         </div>
     </div>
     )

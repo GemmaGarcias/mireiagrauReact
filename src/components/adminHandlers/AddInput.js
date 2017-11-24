@@ -1,5 +1,6 @@
+import {addImagesToCollectionById} from '../../services/apiSessions'
 import React, { Component } from 'react'
-import {Form, Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 import './AddCollection.css'
 import ShowInfoCollection from './ShowInfoCollection'
 
@@ -19,10 +20,12 @@ class AddInput extends Component {
 				event.preventDefault()
         var newInput = `input-${this.state.inputs.length}`;
         this.setState({
-         inputs: this.state.inputs.concat([newInput])})
-        let newstate= this.state
-        delete newstate.inputs
-        this.props.addImages(newstate)
+        inputs: this.state.inputs.concat([newInput])})
+        const {id} = this.props.match.params
+        const {url, name}= this.state
+        addImagesToCollectionById(id, url, name)
+          .then(console.log)
+          //setState
     }
 
     handleChange(event) {
