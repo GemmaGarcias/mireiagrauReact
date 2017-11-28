@@ -32,12 +32,13 @@ class AddCollection extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    axios.post(`https://webfotograph-project.herokuapp.com/new`, {
+    axios.post(`http://localhost:3001/new`, {
      name: this.state.name,
      detail:this.state.detail,
      gallery: this.state.gallery
    })
     .then(response=>{
+      console.log(response)
         this.setState({
         id: response.data.result._id,
         inputImage: true,
@@ -57,20 +58,19 @@ class AddCollection extends Component {
           : <Form>
       					<p className='pform'><strong>Collection name:</strong></p>
               	<input 
-                className='inputAdd' 
-              	name='name' 
-              	placeholder="Add name..."
-                value={this.state.name}
-              	onChange={this.handleChange}
-              	autoFocus/>
+                  className='inputAdd' 
+                	name='name' 
+                	placeholder="Add name..."
+                  value={this.state.name}
+                	onChange={this.handleChange}
+              	  autoFocus/>
               	<p className='pform'><strong>Additional information:</strong></p>
               	<input  
-                className='inputAdd'
-              	name='detail' 
-              	placeholder="Add detail info..."
-                value={this.state.detail}
-              	onChange={this.handleChange} 
-                />
+                  className='inputAdd'
+                	name='detail' 
+                	placeholder="Add detail info..."
+                  value={this.state.detail}
+                	onChange={this.handleChange} />
                 <p className='pform'><strong>Select gallery:</strong></p>
                 <select className='inputAdd' value={this.state.gallery} name='gallery' onChange={this.handleChange}>
                   <option value="">Select one</option>
@@ -92,7 +92,7 @@ class AddCollection extends Component {
               </div>
             : <div className='hide'></div>
           }
-          { redirect && <Redirect to={`/admin/newcollection/${id}/images`} />}
+          { redirect && <Redirect to={`/admin/${id}/images`} />}
         </div>
     </div>
     )

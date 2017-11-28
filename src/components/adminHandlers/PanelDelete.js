@@ -11,6 +11,7 @@ class PanelDelete extends Component{
     this.handleClick = this.handleClick.bind(this);
 	}
 
+
 	handleClick(event){
 		this.setState({id: event.target.value})
 		this.props.deleteSession(event.target.value)

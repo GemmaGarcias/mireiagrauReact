@@ -22,9 +22,10 @@ class GallerySessions extends Component {
   
   
   render () {
-    const fashionCollections = this.state.sessions.filter(session => session.gallery === this.props.match.params.session )
-    const coverSession = fashionCollections.map((session, i) => session.img[0].url) 
-    console.log(coverSession[0])
+    const params = this.props.match.params.session
+    const fashionCollections = this.state.sessions.filter((session) => {return session.gallery === params })
+    console.log(fashionCollections)
+    const coverSession = fashionCollections.map((sessions) => { return sessions.img[0].url}) 
     const sessionName = this.props.match.params.session
     
     return(
@@ -34,13 +35,14 @@ class GallerySessions extends Component {
         </div>
         <div className='container'>
         	<div>
-  					<div><Link to='/#home' >Home</Link> / <Link to='/#gallery'>Gallery</Link></div>
+    				<div><Link to='/#home' >Home</Link> / <Link to='/#gallery'>Gallery</Link></div>
   				</div>
           <h1>{sessionName}</h1>
           <Grid>
             <Row>
                 {fashionCollections.map((session,i)=>(
-                  <Link rel="stylesheet" to={`/gallery/${sessionName}/portfolio/${session._id}`}>
+                  <Link rel="stylesheet" 
+                  to={`/gallery/${sessionName}/portfolio/${session._id}`}>
                   <Col sm={2} md={4}>
                     <Thumbnail
                       src={coverSession[i]}

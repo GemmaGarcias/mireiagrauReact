@@ -9,7 +9,8 @@ class DeleteCollection extends Component{
     super(props)
     this.state = {
       sessionsView: [],
-      gallery:'fashion'
+      gallery:'fashion',
+      deleted: false
     }
   this.handleChange = this.handleChange.bind(this);
   this.deleteSession = this.deleteSession.bind(this);
@@ -23,13 +24,16 @@ class DeleteCollection extends Component{
     })
   }
 
-  componentWillUpdate(){
-    getGallery()
-    .then(data => {
-      this.setState({
-      sessionsView: data})
-    })
-    console.log('hoa2')
+  _componentWillUpdate(){
+    if(this.state.deleted) {
+      getGallery()
+      .then(data => {
+        this.setState({
+          sessionsView: data,
+          deleted: false
+        })
+      })
+    }
   }
 
   handleChange(event) {
@@ -39,13 +43,12 @@ class DeleteCollection extends Component{
 
   deleteSession(id) {
     removeSessionById(id)
-      .then(
-        getGallery()
-          .then(data => {
-          this.setState({
-          sessionsView: data
+      .then(() => {
+        this.setState({
+          deleted: true
         })
-     }))
+        this._componentWillUpdate()
+      })
   }
 
   render() {
@@ -63,7 +66,6 @@ class DeleteCollection extends Component{
       id: session._id,
       images: session.img
     }))
-  console.log(this.state)
 
 	return(
 		<div className='DeleteCollection'>

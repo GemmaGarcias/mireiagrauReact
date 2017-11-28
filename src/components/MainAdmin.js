@@ -12,7 +12,7 @@ const MainAdmin = (props) => (
 			<Route exact path={`${props.match.path}/editHome`} component={EditHome}></Route>	
 			<Route exact path={`${props.match.path}/newcollection`} component={AddCollection}></Route>
 			<Route path={`${props.match.path}/allcollections`} component={ViewImages}></Route>
-			<Route exact path={`${props.match.path}/newcollection/:id/images`} component={AddCollection}></Route>
+			<Route path={`${props.match.path}/:id/images`} component={AddCollection}></Route>
 			<Route path={`${props.match.path}/removecollection`} component={DeleteCollection}></Route>
 		</Switch>
 	</div>
