@@ -4,6 +4,7 @@ import axios from 'axios'
 import AddInput from './AddInput'
 import {Redirect} from 'react-router-dom'
 import './AddCollection.css'
+const {REACT_APP_API_SERVER} = process.env
 
 class AddCollection extends Component {
   constructor(props){
@@ -32,7 +33,7 @@ class AddCollection extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    axios.post(`http://localhost:3001/new`, {
+    axios.post(`REACT_APP_API_SERVER/new`, {
      name: this.state.name,
      detail:this.state.detail,
      gallery: this.state.gallery

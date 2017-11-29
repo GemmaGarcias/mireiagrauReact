@@ -62,7 +62,13 @@ class ViewImages extends Component {
             {
             	imageSession.map(
             		(gallery, i) =>
-            			<GalleryImages title={gallery.name} images={gallery.images} />
+                <Grid>
+                  <Row>
+                  <Col md={7}>
+            			   <GalleryImages title={gallery.name} images={gallery.images} />
+                  </Col>
+                  </Row>
+                </Grid>
             	)
             }
             </ul>
