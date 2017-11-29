@@ -1,4 +1,3 @@
-
 import { getGallery } from '../../services/apiSessions'
 import React, { Component } from 'react'
 import { Grid, Row, Col} from 'react-bootstrap'
@@ -46,7 +45,7 @@ class ViewImages extends Component {
     
     
     return (
-      <div className="ViewImages col-md-12">
+      <div className="ViewImages">
         <h2 className='titleView'>View collections</h2>
         <Form onSubmit={this.handleSubmit}>
           <select className='selectGallery' value={this.state.gallery} name='gallery' onChange={this.handleChange}>

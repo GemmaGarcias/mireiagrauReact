@@ -92,7 +92,7 @@ const Admin = (props) => {
 	                                </tr>
 	                                <tr>
 	                                    <td>
-	                                        <a href="">Messages </a> <span className="label label-info">5</span>
+	                                        <Link to="/admin/messages">Messages </Link> <span className="label label-info">5</span>
 	                                    </td>
 	                                </tr>
 	                                <tr>
@@ -109,18 +109,21 @@ const Admin = (props) => {
 	                <div className="panel panel-default">
 	                    <div className="panel-heading">
 	                        <h4 className="panel-title">
-	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span className="glyphicon glyphicon-file">
+	                            <a data-toggle="collapse" data-parent="#accordion" 
+	                            href="#collapseFour"><span className="glyphicon glyphicon-file">
 	                            </span>Calendar</a>
 	                        </h4>
 	                    </div>
 	                    <div id="collapseFour" className="panel-collapse collapse">
 	                        <div className="panel-body">
 	                            <table className="table">
-	                                <tr>
-	                                    <td>
-	                                        <a href=""><span className="glyphicon glyphicon-calendar"></span></a>
-	                                    </td>
-	                                </tr>
+	                            	<tbody>
+		                                <tr>
+		                                    <td>
+		                                        <Link to='/admin/calendar'><span className="glyphicon glyphicon-calendar"></span>My schedule</Link>
+		                                    </td>
+		                                </tr>
+	                                </tbody>
 	                            </table>
 	                        </div>
 	                    </div>
@@ -129,9 +132,9 @@ const Admin = (props) => {
 	        </div>
 	        <div className="col-sm-9 col-md-9">
 	            <div>
-				 				<div className="col-sm-9 col-md-12">
-									<MainAdmin {...props}/>
-								</div>
+	 				<div className="col-sm-9 col-md-12">
+						<MainAdmin {...props}/>
+					</div>
 	            </div>
 	        </div>
 	    </div>

@@ -33,13 +33,12 @@ class AddCollection extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    axios.post(`REACT_APP_API_SERVER/new`, {
+    axios.post(`${REACT_APP_API_SERVER}/new`, {
      name: this.state.name,
      detail:this.state.detail,
      gallery: this.state.gallery
    })
     .then(response=>{
-      console.log(response)
         this.setState({
         id: response.data.result._id,
         inputImage: true,

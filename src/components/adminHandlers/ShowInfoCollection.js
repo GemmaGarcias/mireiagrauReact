@@ -8,7 +8,7 @@ const ShowInfoCollection = (props) => {
 		<div>
 			<h3>Creating new:</h3>
 			<Button className='finsishBtn'><Glyphicon glyph="share-alt" />
-				<Link className='link' to='/admin/newcollection'>finish work</Link>
+				<Link className='link' to='/admin'>finish work</Link>
 			</Button>	
 			<p><strong>Name:</strong> </p>
 			<p className='infoCreated'>{props.info.name}</p>

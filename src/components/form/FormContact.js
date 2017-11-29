@@ -1,19 +1,34 @@
 import React, { Component } from 'react'	
 import {Row, Button} from 'react-bootstrap'
+import {addMessage} from '../../services/apiSessions'
 
 class FormContact extends Component {
   constructor(props) {
     super(props);
     this.state = {
     	name: '',
-		email: '',
-		message:'',
-		accept:false
+			email: '',
+			message:'',
+			accept:false
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
+  }
+  
+  addContactMessage(){
+  	if (this.state.accept){
+  		addMessage(this.state.name, this.state.email, this.state.message)
+  	.then(response => 
+  		this.setState({
+    	name: '',
+			email: '',
+			message:'',
+			accept:false
+    	})
+  	)
+  }
   }
 
   handleChange(event) {
@@ -23,16 +38,12 @@ class FormContact extends Component {
   handleSubmit(event) {
     alert('your message has been sent');
     event.preventDefault();
-    this.setState({
-    	name: '',
-		email: '',
-		message:'',
-		accept:false
-    });
+  	this.setState({accept:true})
+    this.addContactMessage()
   }
+		
 
   render() {
-  	console.log(this.state)
     return (
     	<Row>
 	    	<form className='formContact'>
