@@ -35,7 +35,7 @@ class GallerySessions extends Component {
         </div>
         <div className='container'>
         	<div>
-    				<div><Link to='/#home' >Home</Link> / <Link to='/#gallery'>Gallery</Link></div>
+    				<div><Link to={`/#home`} >Home</Link> / <Link to={`/#gallery`}>Gallery</Link></div>
   				</div>
           <h1>{sessionName}</h1>
           <Grid>

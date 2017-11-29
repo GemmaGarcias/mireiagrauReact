@@ -1,0 +1,18 @@
+.titleInsert{
+	margin-top: 60px;
+}
+
+.smallImages{
+	margin-top: 20px;
+}
+
+.divImages{
+	display: block;
+}
+
+.preview{
+	display: inline-flex;
+	margin-right:30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

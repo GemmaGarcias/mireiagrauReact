@@ -11,3 +11,7 @@ h2.titleView{
 	background-color: black;
 	color: white;
 }
+
+.titleGallery{
+	border-bottom: 1px grey solid;
+}

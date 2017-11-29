@@ -44,7 +44,7 @@ class ImageUploadForm extends Component {
     this.setState({ uploading: true })
     try {
       await uploadFile(file)
-      this.setState({ uploading: false })
+      this.setState({ uploading: false, fileName:'' })
     }
     catch(e) {
       throw e
@@ -56,12 +56,12 @@ class ImageUploadForm extends Component {
     const { uploading, fileName } = this.state
 
     return (
-      <Col sm={4} md={7}>
+      <div>
         <form onSubmit={this.handleSubmit} className="panel panel-default">
           <div className="panel-heading"><strong>Upload files</strong> <small> </small></div>
           <div className="panel-body">
             <div className="input-group image-preview">
-              <input type="text" value={fileName || ''} className="form-control image-preview-filename" />
+              <input type="text" value={fileName || ''} placeholder='select image' className="form-control image-preview-filename" />
               <span className="input-group-btn">
 
                 <div className="btn btn-default image-preview-input">
@@ -80,10 +80,9 @@ class ImageUploadForm extends Component {
                 </button>
               </span>
             </div>
-
           </div>
         </form>
-      </Col>
+      </div>
     )
   }
 }

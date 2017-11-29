@@ -1,8 +1,9 @@
 import React from 'react'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 import PropTypes from 'prop-types';
 
 import ImageUploadForm from './ImageUploadForm'
+import './Upload.css'
 
 const propTypes = {
   imagePreviewUrl: PropTypes.array,
@@ -12,26 +13,17 @@ const propTypes = {
 const Upload = props => {
   const { imagePreviewUrl, uploadFile } = props
   return (
-    <Grid>
-      <Row>
-        <Col md={8}>
+        <div>
+          <h3 className='titleInsert'>Insert images:</h3>
           <ImageUploadForm uploadFile={uploadFile}/>
-        </Col>
-        <Grid>
-          <Row>
               {
-                imagePreviewUrl.map((image,i) => 
-                <Col md={4} key={i}>
-                  <img 
-                  className="img-responsive preview" width={64} height={90} alt={''} src={image} />
-                </Col>
+                imagePreviewUrl.map((image,i) =>
+                    <img 
+                    className="img-responsive preview" width={64} height={90} alt={''} src={image} />
               )}
-            </Row>
-          </Grid>
-      </Row>
-    </Grid>
-  )
-}
+        </div>
+      )
+    }
 
 Upload.propTypes = propTypes
 

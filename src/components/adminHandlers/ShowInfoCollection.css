@@ -1,0 +1,16 @@
+p.infoCreated{
+	background-color: #e8e8e8;
+	width: 30%;
+	text-align:center;
+}
+
+.finsishBtn{
+	display:block;
+	float:right;
+	color:#54ae54;
+}
+
+a.link{
+	text-decoration: none;
+	color:#54ae54;
+}

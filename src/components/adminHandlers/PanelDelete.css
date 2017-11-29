@@ -6,3 +6,20 @@ h4.panel-title{
 .pnl{
 	margin-bottom: 0px;	
 }
+
+.xbuton{
+	display: inline-block;
+	float: right;
+	color: #a94442;
+	margin-top: 3px;
+}
+
+.xbuton:hover{
+	color: white;
+	background-color: #a94442;
+}
+
+p.panels {
+	padding-left: 10px;
+	margin-top: 3px;
+}

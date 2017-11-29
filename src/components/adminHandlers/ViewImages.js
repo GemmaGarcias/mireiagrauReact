@@ -1,6 +1,7 @@
+
 import { getGallery } from '../../services/apiSessions'
 import React, { Component } from 'react'
-import { Grid, Row} from 'react-bootstrap'
+import { Grid, Row, Col} from 'react-bootstrap'
 import{Form} from 'react-bootstrap'
 import GalleryImages from './GalleryImages'
 
@@ -45,29 +46,27 @@ class ViewImages extends Component {
     
     
     return (
-      <div className="ViewImages">
+      <div className="ViewImages col-md-12">
         <h2 className='titleView'>View collections</h2>
         <Form onSubmit={this.handleSubmit}>
-        <select className='selectGallery' value={this.state.gallery} name='gallery' onChange={this.handleChange}>
+          <select className='selectGallery' value={this.state.gallery} name='gallery' onChange={this.handleChange}>
             <option value="">Select one</option>
             <option value="fashion" name='gallery'>fashion</option>
             <option value="commercial" name='gallery'>commercial</option>
           </select>
         </Form>
         <h3>{this.state.gallery.toUpperCase()} GALLERY:</h3>
-        <Grid>
-          <Row>
-         	<ul>
-          {
-          	imageSession.map(
-          		(gallery, i) =>
-          			<GalleryImages title={gallery.name} images={gallery.images} />
-          	)
-          }
-          </ul>
-		      
-          </Row>
-		    </Grid>
+        <p>Select the gallery you prefer and preview the collections</p>
+          <div>
+           	<ul>
+            {
+            	imageSession.map(
+            		(gallery, i) =>
+            			<GalleryImages title={gallery.name} images={gallery.images} />
+            	)
+            }
+            </ul>
+          </div>		      
       </div>
     );
   }

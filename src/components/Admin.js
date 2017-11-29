@@ -16,7 +16,10 @@ const Admin = (props) => {
 	                <div className="panel panel-default">
 	                    <div className="panel-heading">
 	                        <h4 className="panel-title">
-	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span className="glyphicon glyphicon-folder-close">
+	                            <a data-toggle="collapse" 
+	                            data-parent="#accordion" 
+	                            href="#collapseOne">
+	                            <span className="glyphicon glyphicon-folder-close">
 	                            </span>Home</a>
 	                        </h4>
 	                    </div>
@@ -126,9 +129,9 @@ const Admin = (props) => {
 	        </div>
 	        <div className="col-sm-9 col-md-9">
 	            <div>
-	 				<div className="col-sm-9 col-md-12">
-						<MainAdmin {...props}/>
-					</div>
+				 				<div className="col-sm-9 col-md-12">
+									<MainAdmin {...props}/>
+								</div>
 	            </div>
 	        </div>
 	    </div>
