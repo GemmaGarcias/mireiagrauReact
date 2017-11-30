@@ -1,10 +1,27 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import {getMessages} from '../services/apiSessions'
 
 import MainAdmin from './MainAdmin'
 import './Admin.css'
 
-const Admin = (props) => {
+class Admin extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+    messages:[]
+  }
+ }
+  componentDidMount(){
+		getMessages()
+		.then(response=> {
+			this.setState({
+				messages:response
+			})
+		})
+  }
+
+ render() {
 	return(
 		<div className="container">
 		<div>
@@ -92,7 +109,7 @@ const Admin = (props) => {
 	                                </tr>
 	                                <tr>
 	                                    <td>
-	                                        <Link to="/admin/messages">Messages </Link> <span className="label label-info">5</span>
+	                                        <Link to="/admin/messages">Messages </Link> <span className="label label-info">{this.state.messages.length}</span>
 	                                    </td>
 	                                </tr>
 	                                <tr>
@@ -133,13 +150,13 @@ const Admin = (props) => {
 	        <div className="col-sm-9 col-md-9">
 	            <div>
 	 				<div className="col-sm-9 col-md-12">
-						<MainAdmin {...props}/>
+						<MainAdmin {...this.props}/>
 					</div>
 	            </div>
 	        </div>
 	    </div>
 	</div>
-	)
+	)}
 }
 
 export default Admin

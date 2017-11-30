@@ -2,3 +2,28 @@ h2.titleMessages{
 	color:white;
 	background-color: black;
 }
+
+.boxmessage{
+	border: solid 1px white;
+	border-radius: 0.5em;
+	box-shadow: 0px 0px 20px #000000;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.from, .msgs, .email{
+	font-weight: bold;
+}
+
+.sent{
+	display: block;
+	float: right;
+}
+
+.buttonTrash{
+	display: block;
+	float: right;
+	padding-left: 11px;
+}
+

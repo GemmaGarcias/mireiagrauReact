@@ -61,7 +61,7 @@ class ImageUploadForm extends Component {
           <div className="panel-heading"><strong>Upload files</strong> <small> </small></div>
           <div className="panel-body">
             <div className="input-group image-preview">
-              <input type="text" value={fileName || ''} placeholder='select image' className="form-control image-preview-filename" />
+              <input type="text" value={fileName || ''} placeholder='select image' className="form-control image-preview-filename inputimage" />
               <span className="input-group-btn">
 
                 <div className="btn btn-default image-preview-input">

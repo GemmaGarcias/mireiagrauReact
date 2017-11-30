@@ -15,3 +15,7 @@ h2.titleView{
 .titleGallery{
 	border-bottom: 1px grey solid;
 }
+
+.paragraph{
+	word-wrap: break-word;
+}

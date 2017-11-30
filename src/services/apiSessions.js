@@ -34,4 +34,9 @@ export const getMessages = () => {
 	return axios.get(url)
 		.then( response => response.data )
 }
+
+export const deleteMessageById = (id) => {
+	const url = `${REACT_APP_API_SERVER}/deletemessage/${id}`
+	return axios.delete(url)	
+}
 //https://webfotograph-project.herokuapp.com

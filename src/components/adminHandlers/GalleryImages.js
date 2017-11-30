@@ -9,7 +9,7 @@ const GalleryImages = (props) => {
 			{props.images.map((img ,i) => 
 				<Col md={3}>
 					<img className='galleryImg' src={img.url} alt="" />
-					<p key={img.name}>{img.name}</p>
+					<p key={img.name} className='paragraph' >{img.name}</p>
 				</Col>)}
 		</div>
 	)

@@ -37,7 +37,8 @@ class ViewImages extends Component {
   	
 
   	const gallerySelected = this.state.gallery.length && this.state.gallery
-		const fashionCollections = this.state.sessionsView.filter(session => session.gallery === gallerySelected)
+		const fashionCollections = this.state.sessionsView.filter(session => 
+      session.gallery === gallerySelected)
     const imageSession = fashionCollections.map((session, i) => ({
     	name: session.name,
       images: session.img
@@ -48,7 +49,8 @@ class ViewImages extends Component {
       <div className="ViewImages">
         <h2 className='titleView'>View collections</h2>
         <Form onSubmit={this.handleSubmit}>
-          <select className='selectGallery' value={this.state.gallery} name='gallery' onChange={this.handleChange}>
+          <select className='selectGallery' value={this.state.gallery} name='gallery' 
+          onChange={this.handleChange}>
             <option value="">Select one</option>
             <option value="fashion" name='gallery'>fashion</option>
             <option value="commercial" name='gallery'>commercial</option>
