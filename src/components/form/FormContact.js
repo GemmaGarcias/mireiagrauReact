@@ -18,8 +18,7 @@ class FormContact extends Component {
   }
   
   addContactMessage(){
-  	if (this.state.accept){
-  		addMessage(this.state.name, this.state.email, this.state.message)
+  	addMessage(this.state.name, this.state.email, this.state.message)
   	.then(response => 
   		this.setState({
     	name: '',
@@ -28,7 +27,6 @@ class FormContact extends Component {
 			accept:false
     	})
   	)
-  }
   }
 
   handleChange(event) {
