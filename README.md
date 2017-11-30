@@ -35,6 +35,64 @@ Config your page with your admin site
   ```
   https://mireiagrau.surge.sh/admin
   ```
+  
+  
+## Installation in your computer
+
+To run the server with database:
+
+- Clone or download the repository: [mireiagrauPhotografExpress](https://github.com/GemmaGarcias/mireiagrauPhotografExpress)
+
+You need to have installed [NodeJS](https://nodejs.org/) with [npm](https://www.npmjs.com/), and [MongoDB](https://www.mongodb.com/)
+
+---
+### Configuration `env` file
+
+You need to create an **.env** file in the project root with the following environment variables configured:
+
+- Port:
+
+  ```
+  PORT=3000
+  ```
+
+- Mongodb path and database to use:
+
+  ```
+  urlDb=mongodb://localhost:27017/NAME_DB
+  ```
+- Secret key to encrypt cookies:
+
+  ```
+  SECRETKEY=XXXXXXXXXX
+  ```
+  
+- Secret word to encrypt users' passwords:
+
+  ```
+  SECRET=XXXXXXXXXX
+  ```
+  
+---
+
+### To run the server:
+
+```
+$ npm start
+```
+
+All dependencies will be installed automatically
+
+### To run in dev mode or debugg mode:
+
+```
+$npm run dev
+```
+
+```
+$npm dev:debug
+```
+
 
 ### Author
 [Gemma Garcias Escudé](https://github.com/GemmaGarcias)
