@@ -37,9 +37,9 @@ Config your page with your admin site
   ```
   
   
-## Installation in your computer
+# Installation in your computer:
 
-To run the server with database:
+## 1) Run the server with database:
 
 - Clone or download the repository: [mireiagrauPhotografExpress](https://github.com/GemmaGarcias/mireiagrauPhotografExpress)
 
@@ -65,33 +65,47 @@ You need to be registered in [cloudinary](https://cloudinary.com/) and add your 
 
   ```
   CLOUD_NAME=XXXXXXXXXX
-  API_KEY=443922631549854
-  API_SECRET=oa3P4RSiPcqKnf5VrP1Ghl-3Pzw
+  API_KEY=XXXXXXXXXX
+  API_SECRET=XXXXXXXXXX
   ```
-- 
+- Upload foder for cloudinary images:
+  ```
   UPLOAD_FOLDER=uploads
-  
+  ```
 
----
+### Run the server:
+All dependencies have to be be installed:
+```
+$ npm install
+```
 
-### To run the server:
+Start server
+```
+$ npm run dev
+```
+----
 
+## 2) To run react client:
+- Clone or download this repository
+
+### Configuration `env` file
+
+You need to create an **.env.development** file in the project root with the following environment variable configured:
+
+- Api server:
+  ```
+  REACT_APP_API_SERVER=http://localhost:3001
+  ```
+### Run the react application:
+All dependencies have to be be installed:
+```
+$ npm install
+```
+
+Start React App
 ```
 $ npm start
 ```
-
-All dependencies will be installed automatically
-
-### To run in dev mode or debugg mode:
-
-```
-$npm run dev
-```
-
-```
-$npm dev:debug
-```
-
 
 ### Author
 [Gemma Garcias Escudé](https://github.com/GemmaGarcias)
