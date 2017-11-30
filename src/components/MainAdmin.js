@@ -5,12 +5,14 @@ import EditHome from './adminHandlers/EditHome'
 import AddCollection from './adminHandlers/AddCollection'
 import ViewImages from './adminHandlers/ViewImages.js'
 import DeleteCollection from './adminHandlers/DeleteCollection'
+import AdminHome from './adminHandlers/adminHome'
 import Messages from './adminHandlers/Messages'
 import Calendar from './Calendar'
 
 const MainAdmin = (props) => (
 	<div className="MainAdmin">
 		<Switch>
+			<Route exact path={`${props.match.path}`} component={AdminHome}></Route>
 			<Route exact path={`${props.match.path}/editHome`} component={EditHome}></Route>	
 			<Route exact path={`${props.match.path}/newcollection`} component={AddCollection}></Route>
 			<Route path={`${props.match.path}/allcollections`} component={ViewImages}></Route>
