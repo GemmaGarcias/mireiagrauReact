@@ -23,7 +23,7 @@ Config your page with your admin site
 ## ![Screenshot Admin 1](http://res.cloudinary.com/duholcmsa/image/upload/v1512043325/admin1_dnjics.png)
 ## ![Screenshot Admin 2](http://res.cloudinary.com/duholcmsa/image/upload/v1512043328/admin2_zeihhb.png)
 
-### Description of usage
+### Description of quick usage 
 - Link page:
 
   ```
@@ -45,7 +45,6 @@ To run the server with database:
 
 You need to have installed [NodeJS](https://nodejs.org/) with [npm](https://www.npmjs.com/), and [MongoDB](https://www.mongodb.com/)
 
----
 ### Configuration `env` file
 
 You need to create an **.env** file in the project root with the following environment variables configured:
@@ -53,26 +52,26 @@ You need to create an **.env** file in the project root with the following envir
 - Port:
 
   ```
-  PORT=3000
+  PORT=3001
   ```
 
 - Mongodb path and database to use:
 
   ```
-  urlDb=mongodb://localhost:27017/NAME_DB
+  DB_URL=mongodb://localhost:27017/test
   ```
-- Secret key to encrypt cookies:
+- Cloudinary account keys:
+You need to be registered in [cloudinary](https://cloudinary.com/) and add your account details to the enviroment variables:
 
   ```
-  SECRETKEY=XXXXXXXXXX
+  CLOUD_NAME=XXXXXXXXXX
+  API_KEY=443922631549854
+  API_SECRET=oa3P4RSiPcqKnf5VrP1Ghl-3Pzw
   ```
+- 
+  UPLOAD_FOLDER=uploads
   
-- Secret word to encrypt users' passwords:
 
-  ```
-  SECRET=XXXXXXXXXX
-  ```
-  
 ---
 
 ### To run the server:
