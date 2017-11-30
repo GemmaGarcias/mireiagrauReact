@@ -10,11 +10,7 @@
 ---
 [![Skylab](https://github.com/FransLopez/logo-images/blob/master/logos/skylab-56.png)](http://www.skylabcoders.com/)
 
-<<<<<<< HEAD
 ## MIREIA GRAU WEBSITE'S PROJECT
-=======
-## MIREIA GRAU WEBSITE
->>>>>>> d296423ad6b8e243eedc30b9bc86346b6d59d3d2
 #### The definitive portfolio webside with an administration area
 ## ![Screenshot Home](http://res.cloudinary.com/duholcmsa/image/upload/v1512042960/home_ws2mdc.png)
 
@@ -30,20 +26,15 @@ Config your page with your admin site
 
 ### Description of quick usage 
 - Link page:
-
-  ```
+  
   https://mireiagrau.surge.sh/
-  ```
 
 - Link Admin page:
 
-  ```
   https://mireiagrau.surge.sh/admin
-  ```
   
   
 # Installation in your computer:
-<<<<<<< HEAD
 
 ## 1) Run the server with database:
 
@@ -115,7 +106,7 @@ You need to be registered in [cloudinary](https://cloudinary.com/) and add your 
   API_KEY=XXXXXXXXXX
   API_SECRET=XXXXXXXXXX
   ```
-- Upload foder for cloudinary images:
+- Upload folder for cloudinary images:
   ```
   UPLOAD_FOLDER=uploads
   ```
