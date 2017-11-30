@@ -35,48 +35,6 @@ Config your page with your admin site
   
   
 # Installation in your computer:
-
-## 1) Run the server with database:
-
-- Clone or download the repository: [mireiagrauPhotografExpress](https://github.com/GemmaGarcias/mireiagrauPhotografExpress)
-
-You need to have installed [NodeJS](https://nodejs.org/) with [npm](https://www.npmjs.com/), and [MongoDB](https://www.mongodb.com/)
-
-### Configuration `env` file
-
-You need to create an **.env** file in the project root with the following environment variables configured:
-
-- Port:
-
-  ```
-  PORT=3001
-  ```
-
-- Mongodb path and database to use:
-
-  ```
-  DB_URL=mongodb://localhost:27017/test
-  ```
-- Cloudinary account keys:
-You need to be registered in [cloudinary](https://cloudinary.com/) and add your account details to the enviroment variables:
-
-  ```
-  CLOUD_NAME=XXXXXXXXXX
-  API_KEY=XXXXXXXXXX
-  API_SECRET=XXXXXXXXXX
-  ```
-- Upload foder for cloudinary images:
-  ```
-  UPLOAD_FOLDER=uploads
-  ```
-
-### Run the server:
-All dependencies have to be be installed:
-```
-$ npm install
-```
-=======
-
 ## 1) Run the server with database:
 
 - Clone or download the repository: [mireiagrauPhotografExpress](https://github.com/GemmaGarcias/mireiagrauPhotografExpress)
@@ -116,38 +74,6 @@ All dependencies have to be be installed:
 ```
 $ npm install
 ```
-
-Start server
-```
-$ npm run dev
-```
-----
-
-## 2) To run react client:
-- Clone or download this repository
-
-### Configuration `env` file
-
-You need to create an **.env.development** file in the project root with the following environment variable configured:
-
-- Api server:
-  ```
-  REACT_APP_API_SERVER=http://localhost:3001
-  ```
-### Run the react application:
-All dependencies have to be be installed:
-```
-$ npm install
-```
-
-Start React App
-```
-$ npm start
-```
-
-### Author
-[Gemma Garcias Escudé](https://github.com/GemmaGarcias)
->>>>>>> d296423ad6b8e243eedc30b9bc86346b6d59d3d2
 
 Start server
 ```
