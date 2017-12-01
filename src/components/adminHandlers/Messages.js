@@ -21,17 +21,6 @@ class Messages extends Component {
 		})
   }
 
-  handleClick(event){
-  	event.preventDefault()
-  	deleteMessageById(event.target.value)
-  	 .then(() => {
-        this.setState({
-          deleted: true
-        })
-        this._componentWillUpdate()
-      })
-  }
-
   _componentWillUpdate(){
     if(this.state.deleted) {
       getMessages()
@@ -43,6 +32,17 @@ class Messages extends Component {
       })
     }
   }
+  handleClick(event){
+    event.preventDefault()
+    deleteMessageById(event.target.value)
+     .then(() => {
+        this.setState({
+          deleted: true
+        })
+        this._componentWillUpdate()
+      })
+  }
+
 
  render() {
 		return(
