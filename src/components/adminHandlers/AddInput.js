@@ -20,7 +20,8 @@ class AddInput extends Component {
     data.append('file', file);
     const fileName = file.name
     const {id} = this.props.match.params
-    const { data: { imageLink } } = await axios.post(`${REACT_APP_API_SERVER}/upload`,data)      
+    const { data: { imageLink } } = 
+      await axios.post(`${REACT_APP_API_SERVER}/upload`,data)      
     const newArray = this.state.imageLink.concat(imageLink)
         console.log(newArray, 'array')
     this.setState({imageLink: newArray})

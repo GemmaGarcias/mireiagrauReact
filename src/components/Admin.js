@@ -21,6 +21,15 @@ class Admin extends Component {
 		})
   }
 
+  // componentWillUpdate(){
+  // 	getMessages()
+  // 	 .then(response=> {
+		// 	this.setState({
+		// 		messages:response
+		// 	})
+		// })
+  // }
+
  render() {
 	return(
 		<div className="container">
@@ -146,6 +155,7 @@ class Admin extends Component {
 	                    </div>
 	                </div>
 	            </div>
+	            <h4><a href="http://mireiagrau.surge.sh/" target='blank'>Go Home page</a></h4>
 	        </div>
 	        <div className="col-sm-9 col-md-9">
 	            <div>

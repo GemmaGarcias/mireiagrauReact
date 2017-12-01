@@ -16,7 +16,7 @@ class Messages extends Component {
 		getMessages()
 		.then(response=> {
 			this.setState({
-				messages:response
+				messages:response.reverse()
 			})
 		})
   }
@@ -37,7 +37,7 @@ class Messages extends Component {
       getMessages()
       .then(data => {
         this.setState({
-          messages: data,
+          messages: data.reverse(),
           deleted: false
         })
       })

@@ -5,7 +5,7 @@ import EditHome from './adminHandlers/EditHome'
 import AddCollection from './adminHandlers/AddCollection'
 import ViewImages from './adminHandlers/ViewImages.js'
 import DeleteCollection from './adminHandlers/DeleteCollection'
-import AdminHome from './adminHandlers/adminHome'
+import AdminHome from './adminHandlers/AdminHome'
 import Messages from './adminHandlers/Messages'
 import Calendar from './Calendar'
 

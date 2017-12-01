@@ -32,9 +32,9 @@ class FormContact extends Component {
   handleChange(event) {
     this.setState({[event.target.name]: event.target.value});
   }
+	
 
-  handleSubmit(event) {
-    alert('your message has been sent');
+  handleSubmit(event) {	
     event.preventDefault();
   	this.setState({accept:true})
     this.addContactMessage()
@@ -76,7 +76,8 @@ class FormContact extends Component {
 			        </textarea>
 			    </div>
 			    <div className="button">
-					  <Button type="submit" className="send" onClick={this.handleSubmit}>Send your message</Button>
+					  <Button type="submit" className="send" 
+					  onClick={this.handleSubmit}>Send your message</Button>
 					</div>
 				</form>
 			</Row>
