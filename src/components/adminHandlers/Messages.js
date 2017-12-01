@@ -11,12 +11,13 @@ class Messages extends Component {
     deleted: false
   }
   this.handleClick=this.handleClick.bind(this)
+  this.deleteMsg= this.deleteMsg.bind(this)
  }
   componentDidMount(){
 		getMessages()
 		.then(response=> {
 			this.setState({
-				messages:response.reverse()
+				messages:response
 			})
 		})
   }
@@ -26,23 +27,28 @@ class Messages extends Component {
       getMessages()
       .then(data => {
         this.setState({
-          messages: data.reverse(),
+          messages: data,
           deleted: false
         })
       })
     }
   }
-  handleClick(event){
-    event.preventDefault()
+
+  deleteMsg(){
     deleteMessageById(event.target.value)
      .then(() => {
-        this.setState({
-          deleted: true
-        })
-        this._componentWillUpdate()
+      this.setState({
+        deleted: true
       })
+    }
   }
 
+  handleClick(event){
+    event.preventDefault()
+      this.deleteMsg()
+      this._componentWillUpdate()
+      })
+  }
 
  render() {
 		return(
