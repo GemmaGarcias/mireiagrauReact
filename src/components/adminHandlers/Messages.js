@@ -34,20 +34,19 @@ class Messages extends Component {
     }
   }
 
-  deleteMsg(){
-    deleteMessageById(event.target.value)
+  deleteMsg(id){
+    deleteMessageById(id)
      .then(() => {
       this.setState({
         deleted: true
       })
-    }
+      this._componentWillUpdate()
+    })
   }
 
   handleClick(event){
     event.preventDefault()
-      this.deleteMsg()
-      this._componentWillUpdate()
-      })
+      this.deleteMsg(event.target.value)
   }
 
  render() {
