@@ -33,7 +33,6 @@ Config your page with your admin site
 
   https://mireiagrau.surge.sh/admin
   
-  
 # Installation in your computer:
 ## 1) Run the server with database:
 
